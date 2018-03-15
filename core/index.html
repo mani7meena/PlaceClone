@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/static/clientGame.js"></script>
+</head>
+<body onload="init();">
+  <canvas id="canvas" style="border: 1px solid" width="1000" height="1000"></canvas>
+  <div>Chosen pixel: (<span id="coordinates">0, 0</span>)</div>
+  <div>
+    <select id="select">
+      <option value='rgb(0,211,221)'>Aqua</option>
+      <option value='rgb(34,34,34)'>Black</option>
+      <option value='rgb(0,0,234)'>Blue</option>
+      <option value='rgb(255,167,209)'>Pink</option>
+      <option value='rgb(136,136,136)'>Gray</option>
+      <option value='rgb(2,190,1)'>Green</option>
+      <option value='rgb(148,224,68)'>Lime</option>
+      <option value='rgb(130,0,128)'>Violet</option>
+      <option value='rgb(0,131,199)'>Light Blue</option>
+      <option value='rgb(160,106,66)'>Brown</option>
+      <option value='rgb(207,110,228)'>Purple</option>
+      <option value='rgb(229,0,0)'>Red</option>
+      <option value='rgb(228,228,228)'>Silver</option>
+      <option value='rgb(229,149,0)'>Orange</option>
+      <option value='rgb(255,255,255)'>White</option>
+      <option value='rgb(229,217,0)'>Yellow</option>
+    </select>
+    <button onclick="submit(select.item(select.selectedIndex).value, outline.x, outline.y);">Set color</button>
+  </div>
+  <div>Timeout: <span id="timeout">0</span></div>
+</body>
+</html>
