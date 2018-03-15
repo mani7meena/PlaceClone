@@ -17,7 +17,7 @@ var outline = {
 	x: 0,
 	y: 0,
 	color: 'rgb(34,34,34)',
-	previousColor: 'rgb(255,255,255)', // use the color of cell
+	previousColor: 'rgb(255,255,255)',
 	clear: function() {
 		drawPixel(this.previousColor, this.x, this.y);
 	},
@@ -101,7 +101,10 @@ function draw() {
 			ctx.fillRect(i*pix, j*pix, pix, pix);
 		}
 
-	if (pix >= 6)
+	var pixel = ctx.getImageData(outline.x, outline.y, 1, 1);
+	var data = pixel.data;
+	outline.previousColor = 'rgb('+data[0]+', '+data[1]+', '+data[2]+')';
+	if (pix >= 6) 
 		outline.draw();
 }
 
@@ -159,7 +162,6 @@ function drawPixel(color, x, y) {
 	ctx.fillRect(x, y, pix, pix);
 }
 
-// TODO correct initial previous color (also when its moved before start)
 // TODO emit size settings
 // TODO? something with timeout
 // TODO? resize
