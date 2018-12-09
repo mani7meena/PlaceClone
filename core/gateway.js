@@ -8,7 +8,8 @@ var server = http.Server(app);
 var io = require('socket.io')(server, { wsEngine: 'ws' });
 
 var serviceGame;
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '5000';
+
 app.set('port', port);
 app.use('/static', express.static(__dirname + '/static'));
 
@@ -19,7 +20,7 @@ app.get('/', function(request, response) {
 
 // Starts the server.
 server.listen(port, function() {
-	console.log('Starting server on port 5000');
+	console.log('Starting server on port:'+port);
 });
 
 // Add the WebSocket handlers
