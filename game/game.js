@@ -1,5 +1,5 @@
 var io = require('socket.io-client');
-var socket = io.connect('http://localhost:5000');
+var socket = io.connect('https://placeclone-api.herokuapp.com/');
 
 var pix = 1;
 var width = 1000;
