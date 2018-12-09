@@ -8,8 +8,8 @@ var server = http.Server(app);
 var io = require('socket.io')(server, { wsEngine: 'ws' });
 
 var serviceGame;
-
-app.set('port', 8080);
+const port = process.env.PORT || '8080';
+app.set('port', port);
 app.use('/static', express.static(__dirname + '/static'));
 
 // Routing
@@ -18,7 +18,7 @@ app.get('/', function(request, response) {
 });
 
 // Starts the server.
-server.listen(8080, function() {
+server.listen(port, function() {
 	console.log('Starting server on port 5000');
 });
 
