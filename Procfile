@@ -1,3 +1,3 @@
 
-server: node game/game.js
-client: node core/gateway.js
+web: node core/gateway.js
+worker: node game/game.js
