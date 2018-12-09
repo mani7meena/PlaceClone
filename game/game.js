@@ -1,7 +1,8 @@
 var io = require('socket.io-client');
 var port = process.env.PORT || 5000;  
 var socket = io.connect('https://placeclone.herokuapp.com:'+port);
-
+console.log('debug',port);
+console.log('debug',socket);
 var pix = 1;
 var width = 1000;
 var height = 1000;
