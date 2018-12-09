@@ -1,5 +1,5 @@
 var io = require('socket.io-client');
-var port = 5000;  
+var port = 80;  
 var socket = io.connect('https://placeclone.herokuapp.com:'+port);
 console.log('debug',port);
 console.log('debug',socket);
