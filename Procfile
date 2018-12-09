@@ -1,3 +1,3 @@
 
 web: node game/game.js
-api: node core/core.js
+api: node core/gateway.js
