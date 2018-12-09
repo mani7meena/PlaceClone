@@ -1,6 +1,6 @@
 var io = require('socket.io-client');
-const port = 3000; //process.env.PORT || '5000'; 
-var socket = io.connect('https://placeclone.herokuapp.com:'+port);
+const port = process.env.PORT || '5000'; 
+var socket = io.connect('https://placeclone.herokuapp.com');
 
 var pix = 1;
 var width = 1000;
